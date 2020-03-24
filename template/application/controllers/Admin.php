@@ -45,7 +45,7 @@ class Admin extends CI_Controller {
 
     		$this->db->where('admin_id', $this->session->userdata('admin_id'));
     		$this->db->update('admin', $data);
-    		move_uploaded_file($_FILES['userfile']['tmp_name'],'uploads/admin_image/'.$this->session->userdata('admin_id').'jpg');
+    		move_uploaded_file($_FILES['userfile']['tmp_name'],'uploads/admin_image/'.$this->session->userdata('admin_id').'.jpg');
     		$this->session->set_flashdata('flash_message', get_phrase('Info Updated'));
     		redirect(base_url() . 'admin/manage_profile', 'refresh');
     	}
